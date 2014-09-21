@@ -1,0 +1,124 @@
+<h1>Document your code and generate man files with <code>roxygen2</code></h1>
+
+<p><strong>Why document your code?</strong></p>
+
+<p>Without clear and concise documentation, it becomes impossible for anyone (including yourself after some time) to make sense of what your code does. It&#39;s always good practice to write plenty of comments in your functions. In addition to inline comments (anything to the right of a <code>#</code>), the package <code>roxygen2</code> provides an easy way to document your functions right inside a script and use it to generate help files.</p>
+
+<p>Inline documentation makes it easy to keep everything up-to-date as you work through your code.</p>
+
+<p><img src="inline_documentation.png" alt=""/></p>
+
+<p>After this markup has been processed by <code>roxygen2</code> you get a file with the same name and extension <code>.Rd</code> (R documentation) in the <code>man/</code> folder.</p>
+
+<p><img src="what_roxygen_generates.png" alt=""/></p>
+
+<p>Once you build your package, the final help files that you see when you run <code>?function_name</code> look like this.</p>
+
+<p><img src="rendered_documentation.png" alt=""/></p>
+
+<hr/>
+
+<p>roxygen2 documentation always begins with this syntax:</p>
+
+<pre><code>#&#39;
+</code></pre>
+
+<table><thead>
+<tr>
+<th><code>roxygen2</code> document tags</th>
+<th>What they mean</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>@title</code></td>
+<td>Function title</td>
+</tr>
+<tr>
+<td><code>@description</code></td>
+<td>A clear yet concise description fo what your package does</td>
+</tr>
+<tr>
+<td><code>@details</code></td>
+<td>A longer description (optional)</td>
+</tr>
+<tr>
+<td><code>@param</code></td>
+<td>An arugment that a function takes as input. Usage is <code>@param arg description</code></td>
+</tr>
+<tr>
+<td><code>@keywords</code></td>
+<td>Any keywords that your function might take</td>
+</tr>
+<tr>
+<td><code>@export</code></td>
+<td>Adding this tag will make a function visible outside the package. Otherwise it will only be available internally</td>
+</tr>
+<tr>
+<td><code>@seealso</code></td>
+<td>List any other related functions here. You can also link to them using <code>\link[package]{function}</code></td>
+</tr>
+<tr>
+<td><code>@import</code></td>
+<td>Import any other packages whose functions you might require here</td>
+</tr>
+<tr>
+<td><code>@importFrom</code></td>
+<td>Import only specific functions to use</td>
+</tr>
+<tr>
+<td><code>@return</code></td>
+<td>Type of object that the function returns</td>
+</tr>
+<tr>
+<td><code>@examples</code></td>
+<td>Simple yet clear examples demonstrating how someone might use your function</td>
+</tr>
+<tr>
+<td><code>@docType</code></td>
+<td>Function, data or method</td>
+</tr>
+<tr>
+<td><code>@name</code></td>
+<td>Name of package, method or dataset</td>
+</tr>
+<tr>
+<td><code>@author</code></td>
+<td>Add authors in this format →  <code>Firstname Lastname &lt;email@@address.com&gt;</code></td>
+</tr>
+</tbody></table>
+
+<p><strong>Additional notes</strong></p>
+
+<ul>
+<li>Leave blank lines between sections with an empty <code>#&#39;</code></li>
+<li>Use <code>\code{text}</code> to highlight code.</li>
+<li>Use <code>\strong{text}</code> to bold any text.</li>
+<li>Use <code>\emph{text}</code> to italicize text.</li>
+<li>Links outside your documentation: <code>\email{email_address}</code>, <code>\url{url}</code>, <code>\href{url}{text}</code></li>
+</ul>
+
+<p><strong>Example</strong>
+A trivial function with documentation.</p>
+
+<pre><code class="coffee">#&#39;addNums
+#&#39;
+#&#39; Adds two numbers
+#&#39; @param x First number. Must be \code{numeric} or \code{integer}
+#&#39; @param  y Second number. Must also be \code{numeric} or \code{integer}
+#&#39; @param  ... Optional additional arguments
+#&#39; @export
+#&#39; @keywords addition
+#&#39; @seealso subtractNums
+#&#39; @return integer or numeric
+#&#39; @examples \dontrun{
+#&#39; addNums(1, 4)
+#&#39; addNums(1.2 , 4.5)
+#&#39;}
+addNums &lt;- function(x, y, ...) {
+    return(x + y)
+</code></pre>
+
+<h2>Exercise:</h2>
+
+<p>Please take the next 20 minutes to document the functions we&#39;ve written so far. We&#39;ll discuss this as a group as soon as you are done. 
+<em>Please place a green post-it on your laptop when you&#39;re done.</em></p>

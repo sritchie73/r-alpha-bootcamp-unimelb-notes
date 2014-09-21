@@ -8,10 +8,7 @@ library(markdown)
 library(knitr)
 
 cwd <- normalizePath(getwd())
-dirs <- strsplit(cwd, "/")[[1]]
-if (dirs[length(dirs)] != "r") {
-  stop("This script needs to be run from within bc/intermediate/r.")
-}
+
 
 # Knit Rmd files to html, remove intermediate md files
 files <- list.files(pattern = "Rmd$", recursive = TRUE, full.name = TRUE)

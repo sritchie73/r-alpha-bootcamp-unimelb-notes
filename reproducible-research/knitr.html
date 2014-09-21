@@ -1,0 +1,285 @@
+<h1>Literate programming in R using <code>knitr</code></h1>
+
+<p>It&#39;s easy to generate reports dynamically in <code>R</code>. Literate programming is a paradigm that originally came from Donald Knuth (Knuth, 1984).</p>
+
+<p><strong>Basic idea:</strong> Write <strong>data</strong> + <strong>software</strong> + <strong>documentation</strong> (or in this case manuscripts, reports) together.</p>
+
+<p>Analysis code can be divided into text and code &ldquo;chunks&rdquo;. Doing so allows us to extract the code for machine readable documents (technically referred to as a <code>tangle</code>) or produce a human-readable document (also called <code>weave</code>).</p>
+
+<p>Literate programming involves three main steps:  </p>
+
+<ol>
+<li>Separate the narrative from the code</li>
+<li>Execute source code and return the results.</li>
+<li>Combine the results from the source code with the original narratives to produce a final document.</li>
+</ol>
+
+<h2>Why this is important?</h2>
+
+<p>Results from scientific research have to be easy to reproduce so others can verify results making them trustworthy. Otherwise we risk producing one off results that no one outside the original research group can reproduce. In this lesson we will learn reproducible research, which is one of the by products of dynamics report generation. However, this process alone will not always guarantee reproducibility. </p>
+
+<h2>Installing <code>knitr</code></h2>
+
+<pre><code class="coffee"># Installing knitr is quite easy. 
+install.packages(&quot;knitr&quot;, dependencies = TRUE)
+install.packages(&quot;pander&quot;) # Pander is a useful package for formatting tables in markdown.
+</code></pre>
+
+<p>Knitr supports a variety of documentation formats including <code>markdown</code>, <code>html</code> and <code>LaTeX</code>. It also allows for easy export to <code>PDF</code> and <code>HTML</code>.</p>
+
+<h2>What is markdown?</h2>
+
+<p>Markdown is an incredibly simple semantic file format, not too dissimilar from .doc, .rtf, or .txt. Markdown makes it easy for even those without significant knowledge of markup languages like html or LaTex to write any sort of text (including with links, lists, bullets, etc.) and have it parsed into a variety of formats. To learn more about the basics of markdown, peruse this <a href="markdown.md">short tutorial on the format</a>.</p>
+
+<ul>
+<li><a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet">Markdown cheatsheet</a></li>
+<li><a href="http://daringfireball.net/projects/markdown/basics">Original markdown reference</a></li>
+</ul>
+
+<h2>When to implement reproducibility via literate programming?</h2>
+
+<ul>
+<li>You can do this anytime but it is always best to do this at the beginning of a project. Much like writing unit tests, waiting till after a project is completed is a bad idea. </li>
+<li>Best used alongside version control like Git. </li>
+<li>Use software like R where instructions are scripted.</li>
+<li>Never save the output (only raw dataset with pre-processing code. Even cleaned datasets can be discarded but it might help to save them temporarily during intermediate steps).</li>
+<li>Finally, store the data in a non-proporietary format (e.g. <code>csv</code> over <code>xls</code>). This will ensure that your data will be readable long into the future. </li>
+</ul>
+
+<hr/>
+
+<p><strong>Good and Bad Practices</strong></p>
+
+<p>Related: See <a href="../R-basics/best-practices.Rmd">best practices</a> in the <a href="../R-basics/">R-basics folder</a>.</p>
+
+<h2>Creating a basic knitr document</h2>
+
+<p>In RStudio, choose new R Markdown file (easiest way)
+or you can create a new text file and save it with extension <code>.Rmd</code>.</p>
+
+<p>A basic code chunk looks like this:</p>
+
+<pre><code>```{r}
+# some R code
+```
+</code></pre>
+
+<hr/>
+
+<p>You can knit this document using the knit button or do it programmatically using the <code>knit()</code> function.</p>
+
+<pre><code>library(knitr)
+knit(&quot;file.Rmd&quot;)
+</code></pre>
+
+<p><strong>What just happened?</strong></p>
+
+<p>knitr read the Rmd file, then located and ran all the code chunks identified by the backticks, and replaced it with the output of R function calls. If figures are generated from any such calls, they will be included in markdown syntax.  </p>
+
+<h2>Chunk labels</h2>
+
+<p>You can also name your code chunks. This allows you to keep all the code in a separate script and just refer to code chunks using meaningful names (e.g. data-processing, analysis, model-fitting, visualization, figures, tables)</p>
+
+<pre><code>{r, chunk_name}
+</code></pre>
+
+<p><strong>Some rules on naming chunks</strong></p>
+
+<ul>
+<li>Chunk labels are supposed to be unique id’s in a document.<br/></li>
+<li>knitr will throw an error if two chunks have the same name.<br/></li>
+<li>If no chunk names are given, knitr will simply increment from chunk 1, 2,3 etc.</li>
+</ul>
+
+<p>In addition to naming chunks within the curly braces, you can also add a bunch of other options on how that particular code chunk should behave. </p>
+
+<p><strong>Other options you can add to the tag</strong></p>
+
+<table><thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><strong>echo</strong> =   TRUE or FALSE</td>
+<td>to show or hide code.</td>
+</tr>
+<tr>
+<td><strong>eval</strong> =   TRUE or FALSE</td>
+<td>to run or skip the code.</td>
+</tr>
+<tr>
+<td><strong>warning</strong> =   TRUE or FALSE</td>
+<td>to show or hide function warnings.</td>
+</tr>
+<tr>
+<td><strong>message</strong> =  TRUE or FALSE</td>
+<td>to show or hide function R messages.</td>
+</tr>
+<tr>
+<td><strong>results</strong> = &ldquo;hide&rdquo;</td>
+<td>will hide results. They will still be executed</td>
+</tr>
+<tr>
+<td><strong>fig.height</strong> =</td>
+<td>Height of figure</td>
+</tr>
+<tr>
+<td><strong>fig.width</strong> =</td>
+<td>width of figure</td>
+</tr>
+</tbody></table>
+
+<p>Once your output markdown files (<code>.md</code>) files are generated, you should never edit them because they are automatically generated. Next time you knit the original <code>.Rmd</code> files, all the changes in the <code>.md</code> file will get wiped out. </p>
+
+<p><strong>Write sentences in text with inline output</strong></p>
+
+<pre><code>Include some text `r mean(1:5)`. 
+</code></pre>
+
+<p><strong>Summarizing output from models.</strong></p>
+
+<pre><code>```{r fit_model}
+library(datasets)
+data(airquality)
+fit = lm(Ozone ~ Wind + Temp + Solar.R, data = airquality)
+```
+
+## Including formatted tables in markdown
+
+```{r showtable, results="asis", echo = FALSE, message = FALSE, eval = FALSE, warning = FALSE}
+library(pandoc)
+pander(fit)
+```</code></pre>
+
+<h2>Global options</h2>
+
+<p>Global options are shared across all the following chunks after the location in which the options are set, and local options in the chunk header can override global options.</p>
+
+<pre><code>```{r setoptions, eval = FALSE, echo = FALSE}
+options(width = 60, show.signif.stars = FALSE)
+opts_chunk$set(echo = FALSE, 
+            results = "asis", 
+            warning = FALSE, 
+            message = FALSE, 
+            fig.width = 5, 
+            fig.height = 4, 
+            tidy = TRUE, 
+            fig.align = 'center')
+```</code></pre>
+
+<h2>Other Options</h2>
+
+<p><strong>Dealing with long running process</strong></p>
+
+<p>By adding <code>cache = TRUE</code> to a code block definition. After the first run, results will be cached. We&#39;ll discuss better ways to acheive the same thing using <code>Make</code> in the next section.</p>
+
+<h2>Quick reporting</h2>
+
+<p>Generating reports in knitr doesn&#39;t always have to involve a laborious <code>.Rmd</code> file where scripts need to be broken down into smaller chunks. Sometimes a user might need a simple report generated very quickly from an existing script. The function <code>stitch()</code> in knitr makes it possible to generate nicely formatted reports from R scripts. </p>
+
+<p>knitr provides a template of the source document with default settings which  allows the user to simply pass any R script into this template (consider this one giant code chunk). knitr will  then compile the template to a report. The package currently has build in support for a range of templates from LateX, html, and markdown. To stitch a report:</p>
+
+<pre><code>library(knitr) 
+stitch(&quot;your-script.R&quot;)
+</code></pre>
+
+<h2>Additional chunk options</h2>
+
+<p>Chunks are extremely flexible and more options (beyond the ones listed in the table above) can be included in the header. These look exactly like the kinds of arguments that one might pass to standard R functions. In the example below, the chunk will only be executed if the condition (in this case x less than 5) is satisfied. </p>
+
+<pre><code>{r chunk_name, eval = if (x &lt; 5) TRUE else FALSE}
+</code></pre>
+
+<p>This allows your document to be dynamic allowing certain chunks to be executed only when specific conditions are met.</p>
+
+<h2>Error handling</h2>
+
+<p>By default <code>knitr</code> will not stop execution if it encounters an error. It will continue through to the end of the document and include any errors that arise within chunks. The reason for this behavior is that knitr treats the code as if it were fed directly into the R console. Any errors get printed to the screen and the remaining commands are executed. </p>
+
+<p>To stop knitr as soon as it encounters an error, one can set an option explicitly:</p>
+
+<pre><code class="coffee">opts_knit$set(stop_on_error = 2L)
+</code></pre>
+
+<p><strong>Possible options for error handling</strong></p>
+
+<table><thead>
+<tr>
+<th>Option</th>
+<th>What it does</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>* <strong>0L</strong></td>
+<td>do not stop on errors, continue on as if code was pasted into R console</td>
+</tr>
+<tr>
+<td>* <strong>1L</strong></td>
+<td>when an error occurs, return the results up to this point, ignore the rest of the code within that particular chunk without reporting any further errors.</td>
+</tr>
+<tr>
+<td>* <strong>2L</strong></td>
+<td>Completely stop upon encountering the first error.</td>
+</tr>
+</tbody></table>
+
+<h2>Working with graphics in <code>knitr</code></h2>
+
+<p>If you use <code>ggplot2</code> from the data visualization section, you can have that easily parsed into your document.</p>
+
+<pre><code>library(ggplot2)
+p &lt;- qplot(carat, price, data = diamonds) + geom_hex()
+p 
+# no need to explicitly print(p)
+</code></pre>
+
+<hr/>
+
+<h2>Code Externalization</h2>
+
+<p>Sometimes it can be rather tedious to include dozens of lines of code in the same file as the narrative. In such cases, one can improve readability by externalizing the code into a separate script and simply calling the chunks at the appropriate locations in a document. The code will get read in and executed at those points. There are two steps to making this happen.</p>
+
+<p>First, read the script using <code>read_chunk()</code> at the top of any <code>.Rmd</code> file</p>
+
+<pre><code>read_chunk(&quot;source_code.R&quot;)
+</code></pre>
+
+<p>This is usually done in an early chunk such as the first chunk of a document, and we can use the chunk <code>data-processing</code> later in the source document:</p>
+
+<pre><code>{r, data-processing}
+</code></pre>
+
+<p>Then simply call any chunk as needed simply by using its label. You do not have to include any code between the backticks. </p>
+
+<pre><code>## @knitr data-processing
+</code></pre>
+
+<p>Be sure to leave a blank line between chunks.</p>
+
+<hr/>
+
+<h2>Pandoc</h2>
+
+<p>Pandoc (<a href="http://johnmacfarlane.net/pandoc">http://johnmacfarlane.net/pandoc</a>) is a universal document converter. In particular, Pandoc can convert Markdown to many other document formats, including LATEX, HTML, Rich Text Format (<em>.rtf), E- Book (</em>.epub), Microsoft Word (<em>.docx) and OpenDocument Text (</em>.odt), etc.
+Pandoc is a command line tool. Linux users should be fine with it; for Windows users, the command window can be accessed via the Start menu, then Run cmd. Once we have opened a command window (or terminal), we can type commands like this to convert a Markdown file, say, test.md, to other formats:</p>
+
+<pre><code>pandoc test.md -o test.html
+pandoc test.md -o test.odt
+pandoc test.md -o test.rtf
+pandoc test.md -o test.docx
+pandoc test.md -o test.pdf
+</code></pre>
+
+<p>You can add more options to the basic Pandoc call. To see a full list of options</p>
+
+<pre><code>pandoc --help
+</code></pre>
+
+<p>A commonly used option is to add margins using the <code>-V</code> argument (in this case 1 inch):</p>
+
+<pre><code>pandoc -V geometry:margin=1in test.md -o test.pdf
+</code></pre>
+
+<p>You can use <code>Make</code> to automate much of this process. For example, by setting up a series of dependencies, you can have a new document knitted if the underlying data or code changes but not otherwise. </p>

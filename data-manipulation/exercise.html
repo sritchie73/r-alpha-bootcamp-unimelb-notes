@@ -1,0 +1,63 @@
+<h1>Exercise 02</h1>
+
+<ol>
+<li>Take the <code>iris</code> dataset. Using <code>Species</code> as the indicator variable, convert the wide dataset to long such that it appears as below:</li>
+</ol>
+
+<pre><code>  Species     variable value
+1  setosa Sepal.Length   5.1
+2  setosa Sepal.Length   4.9
+3  setosa Sepal.Length   4.7
+4  setosa Sepal.Length   4.6
+5  setosa Sepal.Length   5.0
+6  setosa Sepal.Length   5.4
+</code></pre>
+
+<ol>
+<li> Save this dataset to disk as <code>&quot;species1.csv&quot;</code>. Duplicate the previous function call and save it again as <code>&quot;species2.csv&quot;</code></li>
+</ol>
+
+<p>Write code that does the following:</p>
+
+<p>Create a list of length two containing &ldquo;species1.csv&rdquo; and &ldquo;species2.csv&rdquo;. 
+Now write a <code>lapply</code> function to read both csv files using write.csv into a list.</p>
+
+<p><strong>Advanced version</strong></p>
+
+<ul>
+<li>Reads all file names in your working directory with a <code>.csv</code> extension.<br/></li>
+<li>Treating that as a list, run the <code>read.csv</code> function on each item so you get a list of size 2 that contains all the data.</li>
+</ul>
+
+<p><em>Note: If this is a hard problem. Work with your neighbor</em></p>
+
+<ol>
+<li><p>With the list from the previous result, write a <code>lappy or llply</code> function call that will retrieve row number 1 from each dataset and return that back to a list.</p></li>
+<li><p>Read the <code>gapminderDataFiveYear.txt</code> dataset in the data folder into an object. Split the data by continent and country, find the year with the highest life expectancy for each combination and return those results back into a data.frame. </p></li>
+</ol>
+
+<p>Hint: You will write a anonymous function (an unnamed function) that will exist only inside one of plyr&#39;s function call. </p>
+
+<p>e.g. </p>
+
+<pre><code>ddply(iris, .(Species), function(x) {
+    x[1, ]
+})
+# This trivial function returns the first row of each species. Note that I did not name this function.
+</code></pre>
+
+<p>You will have to:
+    split by continent and country
+    Inside your anonymous function find the year with the highest life expectancy
+    return that record back.</p>
+
+<p>Advanced version of this question: Also return the year with highest population and highest per capita gdp. So you&#39;ll return 3 rows per country. </p>
+
+<ol>
+<li>Read the <code>mammals.csv</code> file into a data.frame. Use <code>ddply</code> to split the dataset by limb morphology, then write each file to a separate text file named by limb.</li>
+</ol>
+
+<p>Hints: Use <code>unique</code> inside your anoynymous function to get a unique name.
+Use <code>paste</code> to create a filename. e.g. <code>paste(unique(x$Limb_morphology), &quot;.csv&quot;, sep=&quot;&quot;)</code></p>
+
+<p>Pass this variable to the <code>file</code> argument in <code>write.csv</code></p>
