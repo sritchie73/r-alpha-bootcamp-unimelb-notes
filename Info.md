@@ -1,18 +1,76 @@
 ---
 layout: lesson
 root: ../..
-title: Programming with R
+title: Alpha R bootcamp
 level: intermediate
 ---
 
-This README is meant for Software Carpentry instructors planning to teach a intermediate level R bootcamp. Do not commit this readme as-is without editing.
+# Welcome
+
+Welcome to the alpha R bootcamp.
+
+The goal of this bootcamp is to test out the intermediate R material in advance of a full two-day bootcamp
+that will be held in November.
+ 
+The target audience for this material is intended to be researchers who have encountered programming before,
+ideally those who are already using R for their research, but struggling with it, and want to learn more to
+make their lives easier. However, the material should also be suitable for those who have not encountered R
+yet, but have encountered programming before (e.g. have previously attended a Software Carpentry Python bootcamp)
+
+For a full bootcamp, we will also be covering unix shell commands, and version control using git. We won't be
+covering either today.
+
+# Format and Ground Rules
+
+First some ground rules:
+
+Code of Conduct: http://software-carpentry.org/conduct.html
+
+The bootcamp will be an interactive experience. I will be going through material
+on my machine up on the project. I encourage you to follow along as well, and we'll break
+every 10-15 minutes or so to go through a challenge: short exercises on the material where
+you'll work together in groups of 2 or 3.
+
+## Sticky notes
+
+During challenges
+ 
+  - Green: you don't need help with the challenge
+  - Red: you're a bit lost and would like some pointers
+
+Outside of challenges:
+
+  - Red: I'm going through the material too quickly
+
+We'd also be grateful if you could use them to give us feedback at each break: write one thing that's gone well, or one thing you've learned that you think is useful, on the green sticky, and one thing that confused you or didn't work on the red one, and hand them in when you go out for coffee or lunch.
+
+## Etherpad
+
+We'll be using an etherpad for the bootcamp for me to share code, and for you to
+ask questions to each other or share notes.
+
+https://etherpad.mozilla.org/r-alpha-bootcamp-unimelb
+
+## Learning Environment
+
+We'll be using a cloud learning environment for this bootcamp:
+
+https://dit4c.metadata.net/
+
+# Learning Goals / Materials
+
+1. Accessing the cloud learning environment
+2. Introduction to RStudio
+
+
 
 This `master` set is based on material from a [2-day bootcamp](https://github.com/swcarpentry/2013-10-09-canberra) ([@karthik](https://github.com/karthik)) ran in Canberra, Australia in October 2013. The material is meant to cover the full range of topics typically covered in a regular Python bootcamp. 
 
-Shell and Git are intentionally missing from this set. Please consult other lesson folders for those topics.
+Shell and Git are intentionally missing from this set. 
 
 | Topic | Materials |
 | ------ | -------- |
+| The Cloud | Accessing the cloud learning enviroment |
 | Basics | Introduction to R, data types, best practices, seeking help, Using the RStudio IDE |
 | Functions | Basics of control flow, scoping rules and functions in R |
 | Data Manipulation | A full introduction to the apply family, dealing with IO in R, and a full hands on example of cleaning messy data in R |
