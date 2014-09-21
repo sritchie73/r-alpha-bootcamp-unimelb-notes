@@ -40,6 +40,8 @@ Outside of challenges:
 
   - Red: I'm going through the material too quickly
 
+We'd also be grateful if you could use them to give us feedback at each break: write one thing that's gone well, or one thing you've learned that you think is useful, on the green sticky, and one thing that confused you or didn't work on the red one, and hand them in when you go out for coffee or lunch.
+
 #### Etherpad
 
 We'll be using an etherpad for the bootcamp for me to share code, and for you to
@@ -47,5 +49,15 @@ ask questions to each other or share notes.
 
 https://etherpad.mozilla.org/r-alpha-bootcamp-unimelb
 
+#### Learning Environment
+
+We'll be using a cloud learning environment for this bootcamp:
+
+https://dit4c.metadata.net/
+
 ### Learning Goals / Materials
+
+1. Accessing the cloud learning environment
+2. Introduction to RStudio
+
 
