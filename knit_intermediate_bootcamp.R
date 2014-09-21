@@ -23,7 +23,7 @@ setwd(cwd)
 files <- list.files(pattern = "\\.md$", recursive = TRUE, full.name = TRUE)
 files <- normalizePath(files)
 for (fname in files) {
-  if (basename(fname) == "README.md") {
+  if (basename(fname) == "Intro.md") {
     next
   }
   renderMarkdown(file = fname, output = sub("md$", "html", fname))
