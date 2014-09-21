@@ -9,7 +9,6 @@ library(knitr)
 
 cwd <- normalizePath(getwd())
 
-
 # Knit Rmd files to html, remove intermediate md files
 files <- list.files(pattern = "Rmd$", recursive = TRUE, full.name = TRUE)
 files <- normalizePath(files)
