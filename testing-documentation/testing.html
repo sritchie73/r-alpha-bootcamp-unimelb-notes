@@ -342,6 +342,9 @@ expect_that(str(iris), prints_text(&quot;data.frame&quot;))
 shows_message(&quot;This is mgcv&quot;))
 </code></pre>
 
+<pre><code>## Error: library(mgcv) no messages shown
+</code></pre>
+
 <p><strong>8. <code>gives_warning()</code> expects that you get a warning</strong></p>
 
 <pre><code class="r">expect_that(log(-1), gives_warning())
