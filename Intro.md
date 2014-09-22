@@ -73,7 +73,6 @@ Code of Conduct: http://software-carpentry.org/conduct.html
 | Functions | Basics of control flow, scoping rules and functions in R |
 | Data Manipulation | A full introduction to the apply family, dealing with IO in R, and a full hands on example of cleaning messy data in R |
 | Data Visualization | A complete introduction to `ggplot2` |
-| Testing | Documentation with `roxygen2`, Unit testing with `testthat`|
 | Reproducible Research | knitr, make |
 
 ### Complete list of lessons
@@ -81,10 +80,10 @@ Code of Conduct: http://software-carpentry.org/conduct.html
 | ----  | ------  |
 | __The Cloud__ | [00-Intro-to-the-cloud.html](00-Intro-to-the-cloud.html) <br> [cloud learning environment](http://dit4c.metadata.net) |
 | __R Basics__ | [01-basics-of-R.html](R-basics/01-basics-of-R.html) <br> [02-data-structures.html](R-basics/02-data-structures.html) <br> [03-best-practices.html](R-basics/03-best-practices.html) <br> [04-seeking-help.html](R-basics/04-seeking-help.html) <br> [05-subsetting.html](R-basics/05-subsetting.html) <br> [06-vectorization.html](R-basics/06-vectorization.html) <br>  [rstudio-basics.html](R-basics/rstudio-basics.html) <br> [exercises.html](R-basics/exercise.html)|
-| __Data Manipulation__ | [00-messy_data.html](data-manipulation/00-messy_data.html) <br> [01-input-output.html](data-manipulation/01-input-output.html) <br> [02-apply-family.html](data-manipulation/02-apply-family.html) <br> [03-split-apply.html](data-manipulation/03-split-apply.html) <br>  |
+| __Data Manipulation__ | [00-messy_data.html](data-manipulation/00-messy_data.html) <br> [01-input-output.html](data-manipulation/01-input-output.html) <br> [02-apply-family.html](data-manipulation/02-apply-family.html) <br> [03-split-apply.html](data-manipulation/03-split-apply.html) <br> [Apply-exercises.html](apply-exercises.html) |
 | __Functions and Control Structures__ |  [01-functions.html](functions/01-functions.html) <br> [02-control_structures.html](functions/02-control_structures.html) <br> [03-scoping_rules.html](functions/03-scoping_rules.html) <br>  |
 | __Data Visualization__ <br> _If you make changes, only edit the `.Rnw` file. <br>Then knit and tagle to generate other two files_ |  [ggplot.R](data-visualization/ggplot.R) (tangled code from source)  <br> [ggplot.Rnw](data-visualization/ggplot.Rnw) (source) <br> [ggplot.pdf](data-visualization/ggplot.pdf) (rendered) <br>  |
-| __Testing and Documentation__ | [testing.html](testing-documentation/testing.html) <br> [documentation.html](testing-documentation/documentation.html)  |
+| __Reproducible Research__ | [testing.html](testing-documentation/testing.html) <br> [knitr.html](reproducible-research/knitr.html) <br> [Markdown Reference](reproducible-research/markdown.html) |
 
 ### Package installation
 

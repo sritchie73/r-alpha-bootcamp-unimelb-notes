@@ -14,7 +14,7 @@ If you have to repeat the same few lines of code more than once, then you really
 
 * The `body()`, the code inside the function.
 * The `formals()`, the "formal" argument list, which controls how you can call the function.
-* The `environment()`` which determines how variables referred to inside the function are found.
+* The `environment()` which determines how variables referred to inside the function are found.
 * `args()` to list arguments.
 
 ```{r, eval = FALSE}
@@ -57,14 +57,21 @@ first <- function(x, y) {
 }
 ```
 
-```{r, eval = FALSE}
-add <- function(a, b) {
-  return (a + b)
-}
-vector <- c(3, 4, 5, 6)
+**Functions usually return the last value it computed**
 
-sapply(vector, add, 1)
+```{r, eval = FALSE}
+f <- function(x) {
+  if (x < 10) {
+    0
+  } else {
+    10
+  }
+}
+f(5)
+f(15)
 ```
+
+# Exercises
 
 **What does this function return?**
 
@@ -113,17 +120,4 @@ temp <- function(a = 1, b = 2) {
 }
 ```
 
-**Functions usually return the last value it computed**
-
-```{r, eval = FALSE}
-f <- function(x) {
-  if (x < 10) {
-    0
-  } else {
-    10
-  }
-}
-f(5)
-f(15)
-```
 

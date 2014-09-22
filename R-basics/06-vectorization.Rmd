@@ -54,7 +54,7 @@ y * z
 True matrix multiplication is:
 
 ```{r}
-x %% y
+x %*% y
 ```
 
 Vectorized operations make code a lot simpler.

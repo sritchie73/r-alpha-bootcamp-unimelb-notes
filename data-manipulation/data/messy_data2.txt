@@ -1,0 +1,49 @@
+** Sytokiinit 2007 (46 kpl). Määritykset tehty MediCityssä 
+vuoden 2007 seeruminäytteistä. **
+  
+  IL1b07,           Interleukin-1-beta; detektioalaraja oli 0.16
+IL1ra07,          Interleukin-1 receptor antagonist; detektioalaraja oli 10.85
+IL207, Interleukin-2; detektioalaraja oli 0.6
+IL407, Interleukin-4; detektioalaraja oli 0.99
+IL507, Interleukin-5; detektioalaraja oli 1.85
+IL607, Interleukin-6; detektioalaraja oli 0.51
+IL707, Interleukin-7; detektioalaraja oli 0.99
+IL807, Interleukin-8 (CXCL8); detektioalaraja oli 3.95
+IL907, Interleukin-9; detektioalaraja oli 5.78 ja detektioyläraja oli 17419.35
+IL1007,           Interleukin-10; detektioalaraja oli 0.63
+IL12p7007,     Interleukin-12p70; detektioalaraja oli 0.22
+IL1307,           Interleukin-13; detektioalaraja oli 1.4
+IL1507,           Interleukin-15; detektioalaraja oli 0.1
+IL1707,           Interleukin-17; detektioalaraja oli 4.07
+Eotaxin07,       Eotaxin (CCL11) ; detektioalaraja oli 11.99 ja detektioyläraja oli 5372.09
+FGFbasic07,   Basic fibroblast growth factor; detektioalaraja oli 7.16
+GCSF07,         Granulocyte colony-stimulating factor; detektioalaraja oli 24.27
+GMCSF07,     Granulocyte macrophage colony-stimulating factor; detektioalaraja oli 0.15
+IFNg07,           Interferon-gamma; detektioalaraja oli 36.53
+IP1007,           Interferon gamma-induced protein 10 (CXCL10) ; detektioalaraja oli 150.94
+MCP107,        Monocyte chemotactic protein-1 (CCL2); detektioalaraja oli 2.49
+MIP1a07,        Macrophage inflammatory protein-1α (CCL3); detektioalaraja oli 2.61
+PDGFbb07,    Platetet derived growth factor BB; detektioalaraja oli 252.85
+MIP1b07,       Macrophage inflammatory protein-1β (CCL4); detektioalaraja oli 21.54
+TNFa07,         Tumor necrosis factor-alpha; detektioalaraja oli 0.29
+VEGF07,         Vascular endothelial growth factor; detektioalaraja oli 2.62
+IL1a07,            Interleukin-1 alpha; detektioalaraja oli 0.02
+IL2ra07,          Interleukin-2 receptor alpha; detektioalaraja oli 0.2
+IL307, Interleukin-3; detektioalaraja oli 24.9
+IL12p4007,     Interleukin-12p40; detektioalaraja oli 17.73
+IL1607,           Interleukin-16; detektioalaraja oli 0.46
+IL1807,           Interleukin-18; detektioalaraja oli 7.13
+CTACK07,     Cutaneous T-cell attracting (CCL27); detektioalaraja oli 100.56
+GROa07,         Growth regulated oncogene-α (CXCL1); detektioalaraja oli 4.19
+HGF07,           Hepatocyte growth factor; detektioalaraja oli 27.11
+LIF07, Leukemia inhibitory factor; detektioalaraja oli 1.55
+MCP307,        Monocyte specific chemokine 3 (CCL7); detektioalaraja oli 0.05
+MCSF07,        Macrophage colony-stimulating factor; detektioalaraja oli 0.01
+MIF07,           Macrophage migration inhibitory factor (glycosylation-inhibiting factor) ; detektioalaraja oli 4.28
+MIG07,           Monokine induced by interferon-gamma (CXCL9); detektioalaraja oli 105.19
+bNGF07,         Beta nerve growth factor; detektioalaraja oli 0.06
+SCF07,            Stem cell factor; detektioalaraja oli 7.11
+SCGFb07,       Stem cell growth factor beta; detektioalaraja oli 1178.54
+SDF1a07,        Stromal cell-derived factor-1 alpha (CXCL12); detektioalaraja oli 5.91
+TNFb07,         Tumor necrosis factor-beta; detektioalaraja oli 0.01
+TRAIL07,       TNF-related apoptosis inducing ligand; detektioalaraja oli 13.41

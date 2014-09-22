@@ -3,6 +3,22 @@
 <p>Intro.html contains all the useful information. These are just some rough notes
 so I can keep track of where I am, and whats next at the bootcamp,</p>
 
+<h2>00 Introduction</h2>
+
+<ul>
+<li>Welcome, SWC intro for those unfamiliar</li>
+<li>Explain goals of this particular bootcamp: e.g. test R material</li>
+<li>Teaching format: 
+
+<ul>
+<li>lectures vs. challenges</li>
+<li>sticky notes</li>
+<li>etherpad </li>
+</ul></li>
+<li>Cover ground rules briefly</li>
+<li>Learning objectives for the day</li>
+</ul>
+
 <h2>00 Cloud Learning Environment</h2>
 
 <ul>
@@ -13,20 +29,145 @@ so I can keep track of where I am, and whats next at the bootcamp,</p>
 <ul>
 <li>Note that some people might miss the active part</li>
 </ul></li>
-<li></li>
+<li>For the first part we&#39;ll use R from command line</li>
+<li>Once past the basics, we&#39;ll use RStudio</li>
 </ul>
 
 <h2>01 Basics of R:</h2>
 
 <ul>
-<li>Introduce R</li>
+<li>What is R</li>
 <li>Interactive vs. Inline vs. Batch mode</li>
 </ul>
 
-<h2>02 Introduce RStudio</h2>
+<h2>03 Understanding Basic Data types</h2>
+
+<p>Show review of R data types</p>
+
+<ul>
+<li>6 atomic types: &ldquo;character&rdquo;, &ldquo;numeric&rdquo; (decimal), &ldquo;integer&rdquo;, &ldquo;logical&rdquo;, &ldquo;complex&rdquo;, &ldquo;raw&rdquo; (bytes)
+
+<ul>
+<li>Give some examples of each</li>
+</ul></li>
+<li>Basic data structures: &ldquo;atomic vector&rdquo;, &ldquo;list&rdquo;, &ldquo;matrix&rdquo; (2d atomic vector), &ldquo;data.frame&rdquo;, &ldquo;factor&rdquo;
+
+<ul>
+<li>Scroll down to bottom of the page for review</li>
+<li>build a few examples</li>
+</ul></li>
+<li>Special types: NA, Inf, NaN</li>
+<li>Break for some challenges. 
+
+<ul>
+<li>Get learners to create some vectors, (name, number of siblings, favourite number)</li>
+<li>combine into list, data frame, and matrix (hint use: as.matrix)</li>
+<li>What is the difference between the three? Did what you expect happen in each case?</li>
+</ul></li>
+</ul>
+
+<h2>0.35 RStudio</h2>
+
+<p>Now seems like a good time to switch to RStudio:</p>
 
 <ul>
 <li>show 4 panes</li>
+</ul>
+
+<h2>04 Seeking Help</h2>
+
+<p>Inspecting objects</p>
+
+<ul>
+<li>str, class, length, dim, sessionInfo, options
+Help files:</li>
+<li>? vs. ??.  Explain backticks for special operations!</li>
+<li>Walk through parts of a help file.
+Seeking help from peers:</li>
+<li>dput for dumping your structure</li>
+<li>Searching stackoverflow
+
+<ul>
+<li>emphasise searching, minimal effort, and minimal reprocible examples.
+CRAN task views</li>
+</ul></li>
+</ul>
+
+<h2>05 Subsetting </h2>
+
+<p>Demonstrate for vectors:
+    - Integer subsetting
+    - Named subsetting
+    - Negative slices
+    - logical operators
+    - based on condition
+    - which
+    - Subsetting a location which doesn&#39;t exist
+  Demonstrate for two-dimensional objects:
+    - Rows vs. Columns
+    - as above
+    - explain &ldquo;$&rdquo; as shortcut for &ldquo;column&rdquo;
+  Lists:
+    - explain difference between <code>[</code>, <code>[[</code>, and <code>$</code>
+      - Technically, <code>[</code> can only ever return an object of the same class, e.g. on a list, it must return a list!
+  Break for challenge in &ldquo;Exercises.html&rdquo;</p>
+
+<hr/>
+
+<p>Morning Tea!</p>
+
+<hr/>
+
+<p>First thing back, get students to upload:
+  <code>data_manipulation/data/messy_data.txt</code>
+  <code>data_manipulation/data/climate.csv</code></p>
+
+<h2>06 Vectorisation</h2>
+
+<ul>
+<li>Most operations in R are vectorised. This means you can apply a function to 
+all elements in a vector without having to loop over them. e.g.:
+
+<ul>
+<li>adding two vectors</li>
+<li>vector subtraction</li>
+<li>shorter vectors are recycle</li>
+<li>evaluating truth statements (boolean operations)</li>
+</ul></li>
+<li>Matrix operations are also vectorised:
+
+<ul>
+<li>Importantly, most operations are elementwise</li>
+<li>True matrix multiplication through <code>%*%</code></li>
+<li>Matrices organised by column, so vectorised operations are performed by column.</li>
+</ul></li>
+</ul>
+
+<h2>07 Apply functions</h2>
+
+<p>There are a couple of different ways to automate tasks in R:</p>
+
+<ul>
+<li>For loops</li>
+<li>While loops</li>
+<li>The apply family of functions
+
+<ul>
+<li>lapply, apply to each element of a vector (or list)</li>
+<li>sapply, same as lapply, but simplify the output</li>
+<li>apply to a dimension of a matrix: 
+
+<ul>
+<li>Note: will not work for data.frames</li>
+<li>Always combines output to columns</li>
+</ul></li>
+</ul></li>
+</ul>
+
+<h2>06 Best Practices</h2>
+
+<ul>
+<li>Talk about best practices for scientific computing</li>
 <li>Walk through creating a new project in RStudio
 
 <ul>
@@ -36,14 +177,74 @@ so I can keep track of where I am, and whats next at the bootcamp,</p>
 </ul></li>
 </ul>
 
-<p>03 Understanding Basic Data types</p>
-
-<p>Show review of R data types</p>
+<h2>07 Messy Data</h2>
 
 <ul>
-<li>6 atomic types: &ldquo;character&rdquo;, &ldquo;numeric&rdquo; (decimal), &ldquo;integer&rdquo;, &ldquo;logical&rdquo;, &ldquo;complex&rdquo;, &ldquo;raw&rdquo; (bytes)</li>
-<li>Basic data structures: &ldquo;atomic vector&rdquo;, &ldquo;list&rdquo;, &ldquo;matrix&rdquo; (2d atomic vector), &ldquo;data.frame&rdquo;, &ldquo;factor&rdquo;</li>
-<li>Constructing vectors</li>
-<li>Special types: NA, Inf, NaN</li>
-<li>Inspecting objects</li>
+<li>Most data we work with isn&#39;t nicely formatted</li>
+<li>Even when it is, some functions expect it in a different format.</li>
+<li>Most of what you do in analysis will probably be getting data from format A to format B.</li>
+</ul>
+
+<p>SWITCH lessons to 01-Input_Output!</p>
+
+<ul>
+<li>scan: numbers only</li>
+<li>readline: any freeform text</li>
+<li>read.csv, read.table (Show help file, note: stringsAsFactors!)</li>
+</ul>
+
+<p>Local file operations</p>
+
+<ul>
+<li>list.files, file.info, dir, file.exists, getwd, setwd</li>
+</ul>
+
+<p>Saving files:</p>
+
+<ul>
+<li>write.table (Show helpfile, note: quote)</li>
+<li>saveRDS (if you only want to use R to work with the file)</li>
+<li>can also save compressed, see <code>bzfile</code>.</li>
+</ul>
+
+<h2>Capstone: back to Messy Data lesson</h2>
+
+<ul>
+<li>Long vs. Wide data</li>
+<li>First example: melt long to wide</li>
+<li> <code>dcast</code> back to long: formula: status ~ variable.</li>
+</ul>
+
+<p>For the next section, I will get you to follow along with me. So if im going too
+fast, put a pink sticker on the back of your laptop, and I can slow down. Also 
+don&#39;t hesitate to ask any questions about code you don&#39;t understand here, there&#39;s
+been a big jump in the difficulty of the material!</p>
+
+<p>We&#39;re going to be creating a script that takes some raw data thats been sent to 
+us, into a regular format we can work with.</p>
+
+<ul>
+<li>Non-standard input (well that escalated quickly!) (Bird Migratory Data)
+
+<ul>
+<li>First we look for regular patterns in the non-standard input</li>
+<li>So we know from the person who sent us the file that there should be 11
+entries:
+
+<ul>
+<li>Observer</li>
+<li>First date observed</li>
+<li>Date last observed</li>
+<li>id</li>
+<li>distance</li>
+<li>direction</li>
+<li>speed</li>
+<li>measure x</li>
+<li>measure y</li>
+<li>migratory status</li>
+<li>number of times observed</li>
+</ul></li>
+<li>start and finish are first and second elements of <code>dashes</code></li>
+<li>write function to clean each line.</li>
+</ul></li>
 </ul>
