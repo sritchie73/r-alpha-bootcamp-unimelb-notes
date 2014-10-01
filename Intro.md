@@ -73,26 +73,13 @@ Code of Conduct: http://software-carpentry.org/conduct.html
 | Functions | Basics of control flow, scoping rules and functions in R |
 | Data Manipulation | A full introduction to the apply family, dealing with IO in R, and a full hands on example of cleaning messy data in R |
 | Reproducible Research | knitr, make |
-| Data Visualization | A complete introduction to `ggplot2` |
+| Data Visualization | A complete introduction to `ggplot2` | 
 
 
 ### Complete list of lessons
+
 | Topic | Material |
 | ----  | ------  |
 | __The Cloud__ | [00-Intro-to-the-cloud.html](00-Intro-to-the-cloud.html) <br> [cloud learning environment](http://dit4c.metadata.net) |
-| __R Basics__ | [01-basics-of-R.html](R-basics/01-basics-of-R.html) <br> [02-data-structures.html](R-basics/02-data-structures.html) <br> [03-best-practices.html](R-basics/03-best-practices.html) <br> [04-seeking-help.html](R-basics/04-seeking-help.html) <br> [05-subsetting.html](R-basics/05-subsetting.html) <br> [06-vectorization.html](R-basics/06-vectorization.html) <br>  [rstudio-basics.html](R-basics/rstudio-basics.html) <br> [exercises.html](R-basics/exercise.html)|
-| __Data Manipulation__ | [00-messy_data.html](data-manipulation/00-messy_data.html) <br> [01-input-output.html](data-manipulation/01-input-output.html) <br> [02-apply-family.html](data-manipulation/02-apply-family.html) <br> [03-split-apply.html](data-manipulation/03-split-apply.html) <br> [Apply-exercises.html](apply-exercises.html) |
-| __Functions and Control Structures__ |  [01-functions.html](functions/01-functions.html) <br> [02-control_structures.html](functions/02-control_structures.html) <br> [03-scoping_rules.html](functions/03-scoping_rules.html) <br>  |
-| __Reproducible Research__ | [testing.html](testing-documentation/testing.html) <br> [knitr.html](reproducible-research/knitr.html) <br> [Markdown Reference](reproducible-research/markdown.html) |
-| __Data Visualization__ <br> _If you make changes, only edit the `.Rnw` file. <br>Then knit and tagle to generate other two files_ |  [ggplot.pdf](data-visualization/ggplot.pdf) (rendered) |
-
-### Package installation
-
-Participants will require the following packages. Please transfer these instructions to your installation instructions page.
-
-```coffee
-install.packages("devtools")
-# You'll need other non-R dependencies before you can install devtools. Please see the additional_software.md page for more instructions.
-install.packages(c("reshape2", "plyr", "ggplot2", "knitr", "testthat", "assertthat", "stringr", "pander"))
-```
-
+| __R Basics__ | [01-basics-of-R.html](R-basics/01-basics-of-R.html) <br> [02-rstudio-basics.html](R-basics/rstudio-basics.html) <br> [03-data-structures.html](R-basics/02-data-structures.html) <br> [04-best-practices.html](R-basics/03-best-practices.html) <br> [05-seeking-help.html](R-basics/04-seeking-help.html) <br> [06-subsetting.html](R-basics/05-subsetting.html) <br> [exercises.html](R-basics/exercise.html) <br> [07-vectorization.html](R-basics/06-vectorization.html) |
+| __Data Manipulation__ | [08-apply-family.html](data-manipulation/02-apply-family.html) <br> [03-split-apply.html](data-manipulation/03-split-apply.html) <br> [Apply-exercises.html](apply-exercises.html) <br> [00-messy_data.html](data-manipulation/00-messy_data.html) 

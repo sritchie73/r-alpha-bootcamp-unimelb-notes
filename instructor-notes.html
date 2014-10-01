@@ -40,19 +40,35 @@ so I can keep track of where I am, and whats next at the bootcamp,</p>
 <li>Interactive vs. Inline vs. Batch mode</li>
 </ul>
 
+<h2>06 Best Practices</h2>
+
+<ul>
+<li>Talk about best practices for scientific computing</li>
+<li>Walk through creating a new project in RStudio
+
+<ul>
+<li>it makes sense to keep all the scripts and related files together for a single 
+analysis or project</li>
+<li>makes it easier to switch between unrelated tasks</li>
+<li>we will treat this as a lab-notebook.</li>
+</ul></li>
+</ul>
+
 <h2>03 Understanding Basic Data types</h2>
 
 <p>Show review of R data types</p>
 
 <ul>
-<li>6 atomic types: &ldquo;character&rdquo;, &ldquo;numeric&rdquo; (decimal), &ldquo;integer&rdquo;, &ldquo;logical&rdquo;, &ldquo;complex&rdquo;, &ldquo;raw&rdquo; (bytes)
+<li>6 atomic types: 
 
 <ul>
+<li>&ldquo;character&rdquo;, &ldquo;numeric&rdquo; (decimal), &ldquo;integer&rdquo;, &ldquo;logical&rdquo;, &ldquo;complex&rdquo;, &ldquo;raw&rdquo; (bytes)</li>
 <li>Give some examples of each</li>
 </ul></li>
-<li>Basic data structures: &ldquo;atomic vector&rdquo;, &ldquo;list&rdquo;, &ldquo;matrix&rdquo; (2d atomic vector), &ldquo;data.frame&rdquo;, &ldquo;factor&rdquo;
+<li>Basic data structures: 
 
 <ul>
+<li>&ldquo;atomic vector&rdquo;, &ldquo;list&rdquo;, &ldquo;matrix&rdquo; (2d atomic vector), &ldquo;data.frame&rdquo;, &ldquo;factor&rdquo;</li>
 <li>Scroll down to bottom of the page for review</li>
 <li>build a few examples</li>
 </ul></li>
@@ -64,6 +80,16 @@ so I can keep track of where I am, and whats next at the bootcamp,</p>
 <li>combine into list, data frame, and matrix (hint use: as.matrix)</li>
 <li>What is the difference between the three? Did what you expect happen in each case?</li>
 </ul></li>
+</ul>
+
+<p>Feedback:</p>
+
+<ul>
+<li>Have real data of each type.</li>
+<li>What kind of data frame do we want?</li>
+<li>Australian data for each data type.</li>
+<li>lubridate for date and time?</li>
+<li>Ecology database for australia.</li>
 </ul>
 
 <h2>0.35 RStudio</h2>
@@ -84,43 +110,72 @@ Help files:</li>
 <li>? vs. ??.  Explain backticks for special operations!</li>
 <li>Walk through parts of a help file.
 Seeking help from peers:</li>
-<li>dput for dumping your structure</li>
-<li>Searching stackoverflow
+<li><p>dput for dumping your structure
+CRAN task views</p>
 
-<ul>
-<li>emphasise searching, minimal effort, and minimal reprocible examples.
-CRAN task views</li>
-</ul></li>
+<p>save, saveRDS</p></li>
 </ul>
 
+<h2>Feedback:</h2>
+
+<p>New challenge, promote collaboration!:
+Share what you&#39;ve just done in the previous challenge in th</p>
+
+<p>Challenge 1:</p>
+
+<ul>
+<li>save objects using saveRDS</li>
+<li>save multiple objects using save</li>
+<li>share</li>
+</ul>
+
+<h2>Seeking Feedback elsewhere:</h2>
+
+<p>Searching stackoverflow</p>
+
+<ul>
+<li>emphasise searching, minimal effort, and minimal reprocible examples.</li>
+</ul>
+
+<hr/>
+
+<p>Morning Tea</p>
+
+<hr/>
+
 <h2>05 Subsetting </h2>
+
+<p>use real data!</p>
 
 <p>Demonstrate for vectors:
     - Integer subsetting
     - Named subsetting
     - Negative slices
-    - logical operators
+    - logical operators: need to introduce the different operators
     - based on condition
     - which
     - Subsetting a location which doesn&#39;t exist
   Demonstrate for two-dimensional objects:
     - Rows vs. Columns
     - as above
-    - explain &ldquo;$&rdquo; as shortcut for &ldquo;column&rdquo;
+    - explain &ldquo;$&rdquo; as shortcut for &ldquo;column&rdquo;</p>
+
+<p>Need to find compelling example on where
   Lists:
     - explain difference between <code>[</code>, <code>[[</code>, and <code>$</code>
-      - Technically, <code>[</code> can only ever return an object of the same class, e.g. on a list, it must return a list!
-  Break for challenge in &ldquo;Exercises.html&rdquo;</p>
+      - Technically, <code>[</code> can only ever return an object of the same class, e.g. 
+        on a list, it must return a list!</p>
 
-<hr/>
+<h2>  Break for challenge in &ldquo;Exercises.html&rdquo;</h2>
 
-<p>Morning Tea!</p>
+<p>Problems:</p>
 
-<hr/>
-
-<p>First thing back, get students to upload:
-  <code>data_manipulation/data/messy_data.txt</code>
-  <code>data_manipulation/data/climate.csv</code></p>
+<ul>
+<li>Haven&#39;t introduced boolean operators yet</li>
+<li>Exercises lack variety in challenge 2, and are too advanced.</li>
+<li>Why are we loading ggplot2::diamonds?</li>
+<li>Haven&#39;t talked about linear models yet.<br/></li>
+</ul>
 
 <h2>06 Vectorisation</h2>
 
@@ -145,11 +200,7 @@ all elements in a vector without having to loop over them. e.g.:
 
 <h2>07 Apply functions</h2>
 
-<p>There are a couple of different ways to automate tasks in R:</p>
-
 <ul>
-<li>For loops</li>
-<li>While loops</li>
 <li>The apply family of functions
 
 <ul>
@@ -164,34 +215,74 @@ all elements in a vector without having to loop over them. e.g.:
 </ul></li>
 </ul>
 
-<h2>06 Best Practices</h2>
+<p>Switch to the split-apply 
+    - by: split a matrix or data.frame into groups (second argument must be a factor)
+    - tapply, like by, but for single vectors instead of multiple columns
+    - replicate: do the same thing over and over
+    - mapply: apply a function to the same element of multiple lists/vectors/objects</p>
+
+<p>Feedback:
+ = Too many functions, only need a few
+ = What is the task we&#39;re trying to acheive?
+ = Uber challenge, mapply</p>
+
+<hr/>
+
+<p>Break for exercises!</p>
+
+<hr/>
+
+<h2>Need a plotting lesson next!</h2>
+
+<h2>08 Control structures</h2>
 
 <ul>
-<li>Talk about best practices for scientific computing</li>
-<li>Walk through creating a new project in RStudio
+<li>go through
 
 <ul>
-<li>it makes sense to keep all the scripts and related files together for a single analysis or project</li>
-<li>makes it easier to switch between unrelated tasks</li>
-<li>we will treat this as a lab-notebook.</li>
+<li>if, else</li>
+<li>for</li>
+<li>while</li>
+<li>repeat</li>
+<li>break</li>
+<li>next</li>
 </ul></li>
 </ul>
 
-<h2>07 Messy Data</h2>
+<h2>09 Writing functions</h2>
 
 <ul>
-<li>Most data we work with isn&#39;t nicely formatted</li>
-<li>Even when it is, some functions expect it in a different format.</li>
-<li>Most of what you do in analysis will probably be getting data from format A to format B.</li>
+<li>Go through syntax
+
+<ul>
+<li>either use return, or last object returned</li>
+<li>scoping rules</li>
+</ul></li>
+<li>All operations are functions: explain specials.</li>
 </ul>
 
-<p>SWITCH lessons to 01-Input_Output!</p>
+<hr/>
+
+<p>Lunch break here?</p>
+
+<hr/>
+
+<p>Get students to download from:
+<code>https://github.com/sritchie73/r-alpha-bootcamp-unimelb-notes/tree/master/data-manipulation/data/</code></p>
+
+<p><code>mammals.csv</code>
+<code>messy_data.csv</code></p>
+
+<h2>10 Input_Output.html</h2>
 
 <ul>
 <li>scan: numbers only</li>
 <li>readline: any freeform text</li>
 <li>read.csv, read.table (Show help file, note: stringsAsFactors!)</li>
+<li>read file from web (go back to github and copy link address):</li>
 </ul>
+
+<p><code>https://github.com/sritchie73/r-alpha-bootcamp-unimelb-notes/tree/master/data-manipulation/data/climate.csv</code></p>
 
 <p>Local file operations</p>
 
@@ -207,24 +298,32 @@ all elements in a vector without having to loop over them. e.g.:
 <li>can also save compressed, see <code>bzfile</code>.</li>
 </ul>
 
-<h2>Capstone: back to Messy Data lesson</h2>
+<hr/>
+
+<p>Lunch Break here?</p>
+
+<hr/>
+
+<h2>07 Messy Data</h2>
 
 <ul>
-<li>Long vs. Wide data</li>
-<li>First example: melt long to wide</li>
-<li> <code>dcast</code> back to long: formula: status ~ variable.</li>
+<li>Most data we work with isn&#39;t nicely formatted</li>
+<li>Even when it is, some functions expect it in a different format.</li>
+<li><p>Most of what you do in analysis will probably be getting data from format A to format B.</p></li>
+<li><p>Long vs. Wide data</p></li>
+<li><p>First example: melt long to wide</p></li>
+<li><p><code>dcast</code> back to long: formula: status ~ variable.</p></li>
 </ul>
 
-<p>For the next section, I will get you to follow along with me. So if im going too
-fast, put a pink sticker on the back of your laptop, and I can slow down. Also 
-don&#39;t hesitate to ask any questions about code you don&#39;t understand here, there&#39;s
-been a big jump in the difficulty of the material!</p>
-
-<p>We&#39;re going to be creating a script that takes some raw data thats been sent to 
-us, into a regular format we can work with.</p>
+<p>For the next section, we&#39;re going to be creating a script that takes some 
+raw data thats been sent to us, into a regular format we can work wi
+No exercise has been written for this section, so I will get you to follow along
+with me. So if im going too fast, put a pink sticker on the back of your laptop, 
+and I can slow down. Also don&#39;t hesitate to ask any questions about code you 
+don&#39;t understand here.</p>
 
 <ul>
-<li>Non-standard input (well that escalated quickly!) (Bird Migratory Data)
+<li>Non-standard input (well that escalated quickly!) (migratory bird data)
 
 <ul>
 <li>First we look for regular patterns in the non-standard input</li>
@@ -248,3 +347,19 @@ entries:
 <li>write function to clean each line.</li>
 </ul></li>
 </ul>
+
+<p>Exercise: process my description file?</p>
+
+<hr/>
+
+<p>Lunch Break here?</p>
+
+<hr/>
+
+<h2>Testing </h2>
+
+<p><code>test_file</code> run all tests in a file.</p>
+
+<h2>Knitr for reproducible research:</h2>
+
+<p>Create new knitr file to document your data cleaning script!</p>

@@ -36,7 +36,8 @@ so I can keep track of where I am, and whats next at the bootcamp,
 ---
  - Talk about best practices for scientific computing
  - Walk through creating a new project in RStudio
-   - it makes sense to keep all the scripts and related files together for a single analysis or project
+   - it makes sense to keep all the scripts and related files together for a single 
+     analysis or project
    - makes it easier to switch between unrelated tasks
    - we will treat this as a lab-notebook.
 
@@ -45,9 +46,11 @@ so I can keep track of where I am, and whats next at the bootcamp,
 
  Show review of R data types
  
- - 6 atomic types: "character", "numeric" (decimal), "integer", "logical", "complex", "raw" (bytes)
+ - 6 atomic types: 
+    - "character", "numeric" (decimal), "integer", "logical", "complex", "raw" (bytes)
     - Give some examples of each
- - Basic data structures: "atomic vector", "list", "matrix" (2d atomic vector), "data.frame", "factor"
+ - Basic data structures: 
+    - "atomic vector", "list", "matrix" (2d atomic vector), "data.frame", "factor"
     - Scroll down to bottom of the page for review
     - build a few examples
  - Special types: NA, Inf, NaN
@@ -55,6 +58,14 @@ so I can keep track of where I am, and whats next at the bootcamp,
   - Get learners to create some vectors, (name, number of siblings, favourite number)
   - combine into list, data frame, and matrix (hint use: as.matrix)
   - What is the difference between the three? Did what you expect happen in each case?
+
+Feedback:
+ - Have real data of each type.
+ - What kind of data frame do we want?
+ - Australian data for each data type.
+ - lubridate for date and time?
+ - Ecology database for australia.
+ 
 
 0.35 RStudio
 ---
@@ -71,17 +82,42 @@ Now seems like a good time to switch to RStudio:
   - Walk through parts of a help file.
  Seeking help from peers:
   - dput for dumping your structure
-  - Searching stackoverflow
-    - emphasise searching, minimal effort, and minimal reprocible examples.
  CRAN task views
  
+ save, saveRDS
+ 
+Feedback:
+---
+New challenge, promote collaboration!:
+Share what you've just done in the previous challenge in th
+
+Challenge 1:
+ - save objects using saveRDS
+ - save multiple objects using save
+ - share
+
+Seeking Feedback elsewhere:
+---
+Searching stackoverflow
+ - emphasise searching, minimal effort, and minimal reprocible examples.
+
+---
+
+Morning Tea
+
+---
+
+
+
 05 Subsetting 
 ---
+use real data!
+
   Demonstrate for vectors:
     - Integer subsetting
     - Named subsetting
     - Negative slices
-    - logical operators
+    - logical operators: need to introduce the different operators
     - based on condition
     - which
     - Subsetting a location which doesn't exist
@@ -89,16 +125,22 @@ Now seems like a good time to switch to RStudio:
     - Rows vs. Columns
     - as above
     - explain "$" as shortcut for "column"
+    
+Need to find compelling example on where
   Lists:
     - explain difference between `[`, `[[`, and `$`
-      - Technically, `[` can only ever return an object of the same class, e.g. on a list, it must return a list!
-  Break for challenge in "Exercises.html"
+      - Technically, `[` can only ever return an object of the same class, e.g. 
+        on a list, it must return a list!
   
+  Break for challenge in "Exercises.html"
 ---
+Problems:
+ - Haven't introduced boolean operators yet
+ - Exercises lack variety in challenge 2, and are too advanced.
+ - Why are we loading ggplot2::diamonds?
+ - Haven't talked about linear models yet.  
 
-Morning Tea!
 
----
 
 06 Vectorisation
 ---
@@ -127,12 +169,21 @@ Switch to the split-apply
     - tapply, like by, but for single vectors instead of multiple columns
     - replicate: do the same thing over and over
     - mapply: apply a function to the same element of multiple lists/vectors/objects
-    
+
+Feedback:
+ = Too many functions, only need a few
+ = What is the task we're trying to acheive?
+ = Uber challenge, mapply
+
 ---
 
 Break for exercises!
 
 ---
+
+Need a plotting lesson next!
+---
+
 
 08 Control structures
 ---
@@ -198,9 +249,8 @@ Lunch Break here?
  -  `dcast` back to long: formula: status ~ variable.
 
 
-For the next section, we're going to be creating a script that takes some raw data thats been sent to 
-us, into a regular format we can work with.
-
+For the next section, we're going to be creating a script that takes some 
+raw data thats been sent to us, into a regular format we can work wi
 No exercise has been written for this section, so I will get you to follow along
 with me. So if im going too fast, put a pink sticker on the back of your laptop, 
 and I can slow down. Also don't hesitate to ask any questions about code you 
